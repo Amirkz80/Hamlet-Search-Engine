@@ -96,7 +96,7 @@ def main():
             f.write(f"doc: {k}, ID: {v}\n")
 
     # Save Dictionary in a file called index_table.txt with csv format
-    with open('index_table/index_table.txt', 'w') as f:
+    with open('index_table/index_table.txt', 'w', newline="") as f:
         field_names = ['token_number', 'token', 'document_id_list']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
