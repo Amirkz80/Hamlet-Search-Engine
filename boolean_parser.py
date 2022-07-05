@@ -1,4 +1,9 @@
-from boolean_operators import not_operator, and_operator, or_operator, bool_search
+from boolean_operators import (
+    not_operator,
+    and_operator,
+    or_operator,
+    bool_search
+    )
 
 
 class Stack:
