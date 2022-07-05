@@ -21,8 +21,8 @@ def main():
             return 1
         
         else:
-            # Cleans up the query, so we'll have raw strings
-            query = tokenizer(query)
+            # Cleans up the query, so we'll have raw strin
+            # query = tokenizer(query)
             
             # Repeat the program if string is empty or None
             if (query.isspace() and query) or not query:
