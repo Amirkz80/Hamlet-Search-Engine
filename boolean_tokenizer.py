@@ -1,7 +1,7 @@
 import re
 
 
-LETTERS = r"[A-Za-z]"
+LETTERS = r"[A-Za-z1-9]"
 
 
 def boolean_tokenize(input: str):
