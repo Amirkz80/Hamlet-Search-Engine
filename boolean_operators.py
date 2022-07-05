@@ -79,7 +79,9 @@ def bool_search(keyword: str):
         for line in csv_reader:
             if line['token'] == keyword.lower():
                 
-                # We need to change the string formatted list, to a list type
-                docs =  ast.literal_eval(line['document_id_list'])
+                # Change the string formatted dictionary, to python dict type
+                dic =  ast.literal_eval(line['document_id_dic'])
+                # Extract dict keys which are doc ids, and turn it into a list
+                docs = list(dic.keys())
                 
     return docs
