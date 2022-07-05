@@ -21,6 +21,7 @@ def main():
             return 1
         
         else:
+            # Cleans up the query, so we'll have raw strings
             query = tokenizer(query)
             
             # Repeat the program if string is empty or None
