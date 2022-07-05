@@ -25,12 +25,13 @@ doc_IDs = {}
 def tokenizer(word: str):
     """Cleans the input word, includes deleting everything except
     alphanumeric chars, converting word to lower format"""
-
+    
     word = word.translate({
         ord(character): None for character in "!\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~\n\t\v\\"
         }
-    )
-    return word.lower()
+    ).lower()
+
+    return word
 
 
 def index_file(file_name, file_number):
