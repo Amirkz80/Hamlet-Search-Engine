@@ -11,7 +11,7 @@ def main():
     # Gets user input until user enters exit
     while 1:
 
-        query = input("Enter a word, Enter 'exit' to exit : ")
+        query = input("\nEnter a word, Enter 'exit' to exit : ")
         # To monitor duration time
         
         t1 = datetime.now()
@@ -26,7 +26,7 @@ def main():
             
             # Repeat the program if string is empty or None
             if (query.isspace() and query) or not query:
-                print('query can not be empty!')
+                print('\nquery can not be empty!')
             
             # Search for keyword in file
             else:
