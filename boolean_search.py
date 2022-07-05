@@ -2,12 +2,10 @@
 In this script we perform booloean search
 """
 
-
 from datetime import datetime
 from boolean_tokenizer import boolean_tokenize
 from boolean_parser import shunting_yard, parse_query
 from index import tokenizer
-
 
 def main():
 
