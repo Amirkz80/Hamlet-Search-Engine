@@ -46,13 +46,22 @@ def index_file(file_name, file_number):
             for word in line.split(' '):
                 # Cleans up word
                 word = tokenizer(word)
+                
                 # Add word if it wasn't already in the indexed_table
                 if word not in indexed_list.keys():
-                    indexed_list[word] = [file_number]
+                    indexed_list[word] = {file_number: 1}
+                
+                # Increase the number of raw term frequency by 1,
+                # If word and its file_number are in dictionary
+                elif (word in indexed_list.keys() and
+                      file_number in indexed_list[word].keys()):
+                    indexed_list[word][file_number] += 1
+                    
                 # If there is a new doc containg word, add its ID to 
-                # word's document_ids_list
-                elif word in indexed_list.keys() and file_number not in indexed_list[word]:
-                    indexed_list[word].append(file_number)
+                # The word's document_ids_dic
+                elif (word in indexed_list.keys() and
+                      file_number not in indexed_list[word].keys()):
+                    indexed_list[word][file_number] = 1
 
 
 def files_surfer(directory=''):
@@ -98,7 +107,7 @@ def main():
 
     # Save Dictionary in a file called index_table.txt with csv format
     with open('index_table/index_table.txt', 'w', newline="") as f:
-        field_names = ['token_number', 'token', 'document_id_list']
+        field_names = ['token_number', 'token', 'document_id_dic']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
         csv_writer.writeheader()
@@ -106,7 +115,7 @@ def main():
         # Adding rows to file
         for k, v in sorted(indexed_list.items()):
             csv_writer.writerow({
-                "token_number": word_num, "token": k, "document_id_list": v
+                "token_number": word_num, "token": k, "document_id_dic": v
                 })
             word_num += 1
     
