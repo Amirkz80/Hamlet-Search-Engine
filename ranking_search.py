@@ -3,7 +3,7 @@ In this script we perform booloean search
 """
 
 from datetime import datetime
-from ranking_tokenizer import tokenize_query
+from ranking_functions import tokenize_query, ranker
 
 def main():
 
@@ -32,7 +32,7 @@ def main():
                 
                 # Tokenizing the query
                 words = tokenize_query(query)
-                print(words)
+                print(ranker(words))
 
         print(
             f"searching index table time : ",
