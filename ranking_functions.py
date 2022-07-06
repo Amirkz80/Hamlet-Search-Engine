@@ -34,7 +34,7 @@ def ranker(tokens: list) -> list:
     final_docs = []
 
     for token in tokens:
-        # Docs that contain the token
+        # The dictionary that contains term frequnecy of the word
         token_info = bool_search(token)
 
         for doc_id in token_info.keys():
