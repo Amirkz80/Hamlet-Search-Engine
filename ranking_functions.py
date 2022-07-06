@@ -46,4 +46,8 @@ def ranker(tokens: list) -> list:
     for pair in sorted(doc_scores.items(), key=lambda item: item[1]):
         final_docs.append(pair[0])
     
+    # We reverse the list to have ascending order
+    # This function modifies list directly
+    final_docs.reverse()
+    
     return final_docs
