@@ -66,12 +66,11 @@ def not_operator(docs_list: list):
     return final_docs
 
 
-def bool_search(keyword: str):
-    """Searches document with the specified keyword
-    Returns IDs of documents if there was a match,
-    and False if there wasn't any match"""
+def bool_search(keyword: str) -> dict:
+    """Searches for the keyword in index_table,
+    Returns term frequency dictioanry of the word"""
 
-    docs = []
+    dic = {}
 
     with open('index_table/index_table.txt', "r") as f:
 
@@ -81,7 +80,5 @@ def bool_search(keyword: str):
                 
                 # Change the string formatted dictionary, to python dict type
                 dic =  ast.literal_eval(line['document_id_dic'])
-                # Extract dict keys which are doc ids, and turn it into a list
-                docs = list(dic.keys())
                 
-    return docs
+    return dic
