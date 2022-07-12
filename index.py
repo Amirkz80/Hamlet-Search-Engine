@@ -100,10 +100,17 @@ def main():
         del indexed_list['']
 
     # Make a file which contains detail about documents
-    with open('index_table/doc_details.txt', 'w') as f:
-        f.write("List of documents and their IDs:\n\n")
+    with open('index_table/doc_details.txt', 'w', newline="") as f:
+        field_names = ['document_name', 'document_id']
+
+        csv_writer = csv.DictWriter(f, fieldnames=field_names)
+        csv_writer.writeheader()
+
+        # Adding rows to file
         for k, v in doc_IDs.items():
-            f.write(f"doc: {k}, ID: {v}\n")
+            csv_writer.writerow({
+                "document_name": k, "document_id": v
+                })
 
     # Save Dictionary in a file called index_table.txt with csv format
     with open('index_table/index_table.txt', 'w', newline="") as f:
