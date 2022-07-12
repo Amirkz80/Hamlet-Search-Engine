@@ -66,12 +66,11 @@ def not_operator(docs_list: list):
     return final_docs
 
 
-def bool_search(keyword: str):
-    """Searches document with the specified keyword
-    Returns IDs of documents if there was a match,
-    and False if there wasn't any match"""
+def bool_search(keyword: str) -> dict:
+    """Searches for the keyword in index_table,
+    Returns term frequency dictioanry of the word"""
 
-    docs = []
+    dic = {}
 
     with open('index_table/index_table.txt', "r") as f:
 
@@ -79,7 +78,7 @@ def bool_search(keyword: str):
         for line in csv_reader:
             if line['token'] == keyword.lower():
                 
-                # We need to change the string formatted list, to a list type
-                docs =  ast.literal_eval(line['document_id_list'])
+                # Change the string formatted dictionary, to python dict type
+                dic =  ast.literal_eval(line['document_id_dic'])
                 
-    return docs
+    return dic

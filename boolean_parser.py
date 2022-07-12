@@ -1,4 +1,9 @@
-from boolean_operators import not_operator, and_operator, or_operator, bool_search
+from boolean_operators import (
+    not_operator,
+    and_operator,
+    or_operator,
+    bool_search
+    )
 
 
 class Stack:
@@ -100,7 +105,10 @@ def parse_query(postfix: str):
       continue
 
     else:
-      stack.push(bool_search(postfix[i]))
+      # The keys of the dictionary that boolean_search() returns are
+      # The IDs of docs that contain keyword, we push this keys
+      # As a list To the stack
+      stack.push(list(bool_search(postfix[i]).keys()))
       continue
 
   return stack.pop()

@@ -1,0 +1,15 @@
+<h1>This is the home page !</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="query">Search</label>
+        <input type="text" name="query"
+               placeholder="Type" class="form-control"
+               value="{{ request.form['query'] }}"></input>
+    </div>
+    <br></br>
+    <br></br>
+    <div class="form-group">
+        <button type="submit">Search</button>
+    </div>
+</form>
