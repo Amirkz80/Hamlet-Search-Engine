@@ -12,11 +12,11 @@ from flask import (
     )
 
 # Ranking search related functions
-from ranking_functions import tokenize_query, ranker
+from ranking.ranking_functions import tokenize_query, ranker
 
 # Boolean serch rekated fucntions
-from boolean_tokenizer import boolean_tokenize
-from boolean_parser import shunting_yard, parse_query
+from boolean.boolean_tokenizer import boolean_tokenize
+from boolean.boolean_parser import shunting_yard, parse_query
 #from index import tokenizer
 
 app = Flask(__name__)
