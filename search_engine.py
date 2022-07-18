@@ -3,12 +3,13 @@ import csv
 
 # Flask related functions and classes
 from flask import (
+    jsonify,
     Flask, 
     redirect,
     render_template,
     request,
     url_for,
-    send_from_directory
+    send_from_directory,
     )
 
 # Ranking search related functions
@@ -21,13 +22,13 @@ from boolean.boolean_parser import shunting_yard, parse_query
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
-def main():
-    """Shows search box if request is GET, and passes query if it's POST"""
-    if request.method == 'POST':
-        return redirect(url_for('results', query=request.form['query']))
 
-    return render_template('home.html')
+@app.route('/', methods=['POST'])
+def main():
+    """Sends query to results function, with post method"""
+    
+    return redirect(url_for('results', query=request.get_json(force=True)['query']))
+
 
 @app.route('/results/<string:query>', methods=['GET'])
 def results(query):
@@ -65,13 +66,15 @@ def results(query):
                     
 
     context = {
-        'time': datetime.now() - t1,
+        # Returns total seconds in str format to (to make it serializable)
+        'time': str((datetime.now() - t1).total_seconds()),
         'query': query,
         'results_length':len(results),
         'results': results
         }
-        
-    return render_template('results.html', context=context)
+
+    return jsonify(context)
+
 
 @app.route('/files/<path:path>', methods=['GET'])
 def get_file(path):
