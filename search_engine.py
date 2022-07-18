@@ -63,15 +63,28 @@ def results(query):
                     if int(e['document_id']) == doc_id:
                         results.append(e['document_name'])
                         break
-                    
-
+                
     context = {
         # Returns total seconds in str format to (to make it serializable)
         'time': str((datetime.now() - t1).total_seconds()),
-        'query': query,
         'results_length':len(results),
-        'results': results
-        }
+        'results': []                
+    }
+
+    # creates a dic containing result's detail
+    if results:
+        for result in results:
+            with open('repo/' + result, 'r') as file:
+                summary = ''
+                for line in file.readlines()[0:5]:
+                    summary += line.replace('\n', '')
+                context['results'].append(
+                    {
+                    'title': result,
+                    # Only returns first 100 characters of Doc.
+                    'summary': f"{summary[0:100]}..."
+                    }
+                )
 
     return jsonify(context)
 
