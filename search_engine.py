@@ -1,6 +1,9 @@
 from datetime import datetime
 import csv
 
+# A library to handel cross origin resource sharing
+from flask_cors import CORS
+
 # Flask related functions and classes
 from flask import (
     jsonify,
@@ -21,6 +24,8 @@ from boolean.boolean_parser import shunting_yard, parse_query
 #from index import tokenizer
 
 app = Flask(__name__)
+# To handle app cross origin resource sharing
+CORS(app)
 
 
 @app.route('/', methods=['POST'])
