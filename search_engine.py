@@ -9,7 +9,6 @@ from flask import (
     jsonify,
     Flask, 
     redirect,
-    render_template,
     request,
     url_for,
     send_from_directory,
