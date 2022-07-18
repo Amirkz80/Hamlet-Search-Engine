@@ -1,0 +1,11 @@
+document_name,document_id
+coriolanus_TXT_FolgerShakespeare.txt,1
+antony-and-cleopatra_TXT_FolgerShakespeare.txt,2
+henry-iv-part-1_TXT_FolgerShakespeare.txt,3
+king-lear_TXT_FolgerShakespeare.txt,4
+the-comedy-of-errors_TXT_FolgerShakespeare.txt,5
+cymbeline_TXT_FolgerShakespeare.txt,6
+alls-well-that-ends-well_TXT_FolgerShakespeare.txt,7
+as-you-like-it_TXT_FolgerShakespeare.txt,8
+hamlet_TXT_FolgerShakespeare.txt,9
+macbeth_TXT_FolgerShakespeare.txt,10
