@@ -93,14 +93,14 @@ def main():
 
     # Start Surfing files in the documents directory,
     # Default is current index.the directory
-    files_surfer(directory="repo/")
+    files_surfer(directory="server/repo/")
 
     # Delete Empty word row in indexes list, if it exists
     if '' in indexed_list.keys():
         del indexed_list['']
 
     # Make a file which contains detail about documents
-    with open('index_table/doc_details.txt', 'w', newline="") as f:
+    with open('server/index_table/doc_details.txt', 'w', newline="") as f:
         field_names = ['document_name', 'document_id']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
@@ -113,7 +113,7 @@ def main():
                 })
 
     # Save Dictionary in a file called index_table.txt with csv format
-    with open('index_table/index_table.txt', 'w', newline="") as f:
+    with open('server/index_table/index_table.txt', 'w', newline="") as f:
         field_names = ['token_number', 'token', 'document_id_dic']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
