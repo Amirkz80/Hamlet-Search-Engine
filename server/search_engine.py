@@ -59,7 +59,7 @@ def results(query):
 
     if doc_ids:
         print(doc_ids)
-        with open('index_table/doc_details.txt', 'r') as f:
+        with open('index_table/doc_details.txt', 'r', encoding='utf-8') as f:
             csv_reader = csv.DictReader(f)
             lines = [line for line in csv_reader]
             for doc_id in doc_ids:
@@ -78,7 +78,7 @@ def results(query):
     # creates a dic containing result's detail
     if results:
         for result in results:
-            with open('repo/' + result, 'r') as file:
+            with open('repo/' + result, 'r', encoding='utf-8') as file:
                 summary = ''
                 for line in file.readlines()[0:5]:
                     summary += line.replace('\n', '')

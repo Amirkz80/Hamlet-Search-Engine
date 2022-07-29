@@ -72,7 +72,7 @@ def bool_search(keyword: str) -> dict:
 
     dic = {}
 
-    with open('index_table/index_table.txt', "r") as f:
+    with open('index_table/index_table.txt', "r", encoding='utf-8') as f:
 
         csv_reader = csv.DictReader(f)
         for line in csv_reader:
