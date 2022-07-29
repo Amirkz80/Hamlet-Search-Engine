@@ -1,6 +1,8 @@
 se_env/
 index_table/
-__pycache__/
+!index_table/.gitkeep
 repo/
+!repo/.gitkeep
+__pycache__/
 node_modules
 .next
