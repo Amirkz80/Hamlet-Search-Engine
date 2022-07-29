@@ -1,6 +1,6 @@
 se_env/
+index_table/
 __pycache__/
-repo/*.txt
+repo/
 node_modules
-index_table/*.txt
 .next
