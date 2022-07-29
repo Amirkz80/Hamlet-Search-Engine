@@ -39,7 +39,7 @@ def index_file(file_name, file_number):
     indexed_list, and also if a word is in another doc too,
     adds that documents's ID to word's document_ids_list"""
     
-    with open(file_name, 'r') as f:
+    with open(file_name, 'r', encoding='utf-8') as f:
         lines = f.readlines()
         
         for line in lines:
@@ -100,7 +100,7 @@ def main():
         del indexed_list['']
 
     # Make a file which contains detail about documents
-    with open('server/index_table/doc_details.txt', 'w', newline="") as f:
+    with open('server/index_table/doc_details.txt', 'w', newline="", encoding='utf-8') as f:
         field_names = ['document_name', 'document_id']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
@@ -113,7 +113,7 @@ def main():
                 })
 
     # Save Dictionary in a file called index_table.txt with csv format
-    with open('server/index_table/index_table.txt', 'w', newline="") as f:
+    with open('server/index_table/index_table.txt', 'w', newline="", encoding='utf-8') as f:
         field_names = ['token_number', 'token', 'document_id_dic']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
