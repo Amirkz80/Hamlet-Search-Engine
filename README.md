@@ -1,4 +1,4 @@
-# Search-Engine
+# HAMLET, A micro Search Engine
 
 The purpose of this project is to build a search engine
 
