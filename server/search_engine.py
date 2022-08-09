@@ -15,7 +15,7 @@ from flask import (
     )
 
 # Ranking search related functions
-from ranking.ranking_functions import tokenize_query, ranker
+from ranking.ranking_functions import tokenize_query, rank_tokens
 
 # Boolean serch rekated fucntions
 from boolean.boolean_tokenizer import boolean_tokenize
@@ -36,7 +36,7 @@ def main():
 
 @app.route('/results/<string:query>', methods=['GET'])
 def results(query):
-    
+
     # To see the infromation retrieval duration
     t1 = datetime.now()
     # Saves returned docoment IDs
@@ -55,19 +55,20 @@ def results(query):
     
     # Performs ranked retireval
     else:
-         doc_ids = ranker(tokenize_query(query))
+        doc_ids = rank_tokens(tokenize_query(query))
 
     if doc_ids:
-        print(doc_ids)
+        #print(doc_ids)
         with open('index_table/doc_details.txt', 'r', encoding='utf-8') as f:
             csv_reader = csv.DictReader(f)
             lines = [line for line in csv_reader]
+            if len(doc_ids) > 10:
+                doc_ids = doc_ids[:10]
             for doc_id in doc_ids:
                 for e in lines: 
                     if int(e['document_id']) == doc_id:
                         results.append(e['document_name'])
-                        break
-                
+                        break      
     context = {
         # Returns total seconds in str format to (to make it serializable)
         'time': str((datetime.now() - t1).total_seconds()),
@@ -80,13 +81,14 @@ def results(query):
         for result in results:
             with open('repo/' + result, 'r', encoding='utf-8') as file:
                 summary = ''
-                for line in file.readlines()[0:5]:
-                    summary += line.replace('\n', '')
+                #for line in file.readlines()[0:5]:
+                    #summary += line.replace('\n', '')
+                summary = file.readline().rstrip()
                 context['results'].append(
                     {
                     'title': result,
                     # Only returns first 100 characters of Doc.
-                    'summary': f"{summary[0:100]}..."
+                    'summary': summary #f"{summary[0:100]}..."
                     }
                 )
 
