@@ -36,25 +36,30 @@ def crawler(url: str):
     global r
     global called_num
     
+    # Number of times that we try to crawl a page
     called_num += 1
 
     # Making request to the url
     r = requests.get(url)
 
-    with open(f'repo\{n}th file.txt', 'w', encoding="utf-8") as file:
-            file.write(url + "\n")
-            file.writelines([text + '\n' for text in parser(r).find_all(text=True) if text.parent.name not in blacklist and text != '\n'])
-    
-    n += 1
-    with open('index_table/urls.txt', 'a', encoding='utf-8') as file:
-        file.write(url + '\n')
-        file.write(str(n) + '\n')
+    if url != "https://en.wikipedia.org/wiki/Main_Page":
+        # Appending new file to the repo
+        with open(f'repo\{n}th file.txt', 'w', encoding="utf-8") as file:
+                file.write(url + "\n")
+                file.writelines([text + '\n' for text in parser(r).find_all(text=True) if text.parent.name not in blacklist and text != '\n'])
+        
+        n += 1
+        # Appending url to the crawled urls list
+        with open('index_table/urls.txt', 'a', encoding='utf-8') as file:
+            file.write(url + '\n')
+            file.write(str(n) + '\n')
 
-    print(url)
+        print(url)
 
     for link in parser(r).find_all('a'):
         
-        if called_num > 100:
+        # Crawler cralws 10 pages in each call
+        if called_num > 10:
             return 0
         elif link.get("href") is not None and "/wiki/" == link.get("href")[:6] and check_url("https://en.wikipedia.org" + link.get("href")) :
             crawler("https://en.wikipedia.org" + link.get("href"))
