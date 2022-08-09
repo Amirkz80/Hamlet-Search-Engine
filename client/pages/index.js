@@ -33,6 +33,7 @@ const Home = () => {
 
   return (
     <>
+      <h1 className="flex justify-center p-3 top-1 sticky text-blue-700 text-5xl font-serif">Hamlet</h1>
       <TopBar>
         <SearchBar
           value={query}
