@@ -48,19 +48,17 @@ def index_file(file_name, file_number):
                 word = tokenizer(word)
                 
                 # Add word if it wasn't already in the indexed_table
-                if word not in indexed_list.keys():
+                if word not in indexed_list:
                     indexed_list[word] = {file_number: 1}
                 
                 # Increase the number of raw term frequency by 1,
                 # If word and its file_number are in dictionary
-                elif (word in indexed_list.keys() and
-                      file_number in indexed_list[word].keys()):
+                elif (file_number in indexed_list[word]):
                     indexed_list[word][file_number] += 1
                     
                 # If there is a new doc containg word, add its ID to 
                 # The word's document_ids_dic
-                elif (word in indexed_list.keys() and
-                      file_number not in indexed_list[word].keys()):
+                else: 
                     indexed_list[word][file_number] = 1
 
 
@@ -80,7 +78,10 @@ def files_surfer(directory=''):
             doc_IDs[file] = doc_id
             index_file(directory + file, doc_id)
             doc_id += 1
-
+            print(doc_id)
+        else:
+            # We don't want to index .gitkeep file!
+            pass
 
 def main():
     """Controls main workflow of the program"""
@@ -93,14 +94,14 @@ def main():
 
     # Start Surfing files in the documents directory,
     # Default is current index.the directory
-    files_surfer(directory="server/repo/")
+    files_surfer(directory="repo/")
 
     # Delete Empty word row in indexes list, if it exists
-    if '' in indexed_list.keys():
+    if '' in indexed_list:
         del indexed_list['']
 
     # Make a file which contains detail about documents
-    with open('server/index_table/doc_details.txt', 'w', newline="", encoding='utf-8') as f:
+    with open('index_table/doc_details.txt', 'w', newline="", encoding='utf-8') as f:
         field_names = ['document_name', 'document_id']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
@@ -113,7 +114,7 @@ def main():
                 })
 
     # Save Dictionary in a file called index_table.txt with csv format
-    with open('server/index_table/index_table.txt', 'w', newline="", encoding='utf-8') as f:
+    with open('index_table/index_table.txt', 'w', newline="", encoding='utf-8') as f:
         field_names = ['token_number', 'token', 'document_id_dic']
 
         csv_writer = csv.DictWriter(f, fieldnames=field_names)
