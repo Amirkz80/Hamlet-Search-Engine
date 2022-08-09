@@ -2,7 +2,6 @@ import os
 import csv
 import ast
 
-
 def and_operator(first_docs_list: list, second_docs_list: list):
     """Returns results by executing AND operator on two input LISTS"""
     
@@ -71,7 +70,6 @@ def bool_search(keyword: str) -> dict:
     Returns term frequency dictioanry of the word"""
 
     dic = {}
-
     with open('index_table/index_table.txt', "r", encoding='utf-8') as f:
 
         csv_reader = csv.DictReader(f)
@@ -80,5 +78,6 @@ def bool_search(keyword: str) -> dict:
                 
                 # Change the string formatted dictionary, to python dict type
                 dic =  ast.literal_eval(line['document_id_dic'])
-                
+                break
+            
     return dic
