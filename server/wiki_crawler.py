@@ -18,7 +18,7 @@ blacklist = [
 ]
 
 def check_url(url):
-    with open('urls.txt', 'r', encoding='utf-8') as file:
+    with open('index_table/urls.txt', 'r', encoding='utf-8') as file:
         lines = file.readlines()
     if url+'\n' in lines:
         return False
@@ -46,7 +46,7 @@ def crawler(url: str):
             file.writelines([text + '\n' for text in parser(r).find_all(text=True) if text.parent.name not in blacklist and text != '\n'])
     
     n += 1
-    with open('urls.txt', 'a', encoding='utf-8') as file:
+    with open('index_table/urls.txt', 'a', encoding='utf-8') as file:
         file.write(url + '\n')
         file.write(str(n) + '\n')
 
@@ -62,7 +62,7 @@ def crawler(url: str):
 def main():
     """Main function"""
     global n
-    with open('urls.txt', 'r', encoding='utf-8') as file:
+    with open('index_table/urls.txt', 'r', encoding='utf-8') as file:
         lines = file.readlines()
         n = int(lines[-1])
     print(f"n is equal to : {n}")
