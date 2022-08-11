@@ -1,9 +1,9 @@
 import math
 import os
-from datetime import datetime
+from heapq import nlargest
+
 from index import tokenizer
 from boolean.boolean_operators import bool_search
-from heapq import nlargest
 
 def tokenize_query(query: str) -> list:
     """Tokenize the query and return tokens in a list"""
@@ -28,7 +28,6 @@ def ranker(doc_scores: dict, length: int, token_info: dict) -> list:
     """ranks the docs that contain token and returns list of
     relative docs that are sorted by TF-IDF """
 
-
     idf = math.log10(len(os.listdir('repo/'))/(length + 1))
     
     # doc_scores dictionary contains doc_ids and their TF-IDF score
@@ -45,10 +44,10 @@ def ranker(doc_scores: dict, length: int, token_info: dict) -> list:
 def rank_tokens(tokens: list) -> list:
     """Gets tokens list, calls ranker for each of them"""
     
-    # final sorted by score docs
+    # Final list that is sorted by tf-idf score for each document
     final_docs = []
 
-    # This dictionary contains doc_ids and their TF-IDF score
+    # This dictionary contains doc_ids and their TF-IDF scores
     doc_scores = {}
 
     for token in tokens:
@@ -57,11 +56,12 @@ def rank_tokens(tokens: list) -> list:
         # Number of all documents that contain token
         length = len(token_info)
 
-        # A dictionary to purify original token_info
-        final_dictionary = {}
         # If dictionary is too large, we only rank its
         # 10 members that have biggest values 
         if length > 10:
+            # A dictionary that contain 10 biggest members of token_info 
+            final_dictionary = {}
+            
             for key in nlargest(10, token_info, key=token_info.get):
                 final_dictionary[key] = token_info[key]
 
