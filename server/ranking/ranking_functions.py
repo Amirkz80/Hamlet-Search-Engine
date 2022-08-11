@@ -5,24 +5,6 @@ from index import tokenizer
 from boolean.boolean_operators import bool_search
 from heapq import nlargest
 
-def chunk(number: int, chunks_number: int):
-    """Gets range of numbers and returns start and end number
-    of each divided group, all groups are equal in members number,
-    EXCEPT LAST ONE if number has a DEVIDE REMAINING"""
-    chunks = []
-    remaining = number % chunks_number
-    gp_members_num = int(number / chunks_number)
-    i = 1
-
-    for chunk_number in range(1, chunks_number + 1):
-        if chunk_number != chunks_number:
-            chunks.append([i, i + (gp_members_num - 1)])
-            i += gp_members_num
-        else:
-            chunks.append([i, i + (gp_members_num - 1 + remaining)])
-
-    return chunks
-
 def tokenize_query(query: str) -> list:
     """Tokenize the query and return tokens in a list"""
 
