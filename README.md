@@ -31,7 +31,7 @@ Hamlet can detect whether to execute "**Boolean Search**" or "**Ranked Retrieval
 <br><img width="691" alt="Hamlet_Sample_2" src="https://user-images.githubusercontent.com/93945976/184540540-5a6f5e53-dac1-4b85-ac09-914f3e664c3f.PNG">
 
 # Set Up
-First by using command line navigate into the server folder, then create a virtual environment 
+Clone the project and by using command line navigate into the server folder, then create a virtual environment 
 ```
 python -m venv <venv-name>
 ```
