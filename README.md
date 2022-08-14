@@ -12,6 +12,22 @@ Hamlet is a search engine 🔎
 <br>It is able to crawl **English Wikipedia** and store the articles in text format, then it analyses all articles in the repository,
 and in the final step it returns relevant results, based on the query that you give to hamlet.
 
+Hamlet can detect whether to execute "**Boolean Search**" or "**Ranked Retrieval**".
+<br><br>To perform a boolean search, all you need to do is to put a **CAPITALISED** boolean keyword inside your query. Hamlet realizes that there is a CAPITALISED boolean keyword and executes the boolean search.
+<br>Supported boolean keywords are ---> "**AND**", "**OR**", "**NOT**", "**(**", "**)**"
+<br>You can enter simple <e.g., "word1 AND word2"> or complex <e.g., "(word1 AND word2) OR ((NOT word3) AND word4 OR word5) OR (NOT word6))"> boolean queries, there is no limitation to use them, 
+<br>The only limitation is your imagination 🔮.
+
+<br>**⭕💡 Remember, if you forget to use a CAPITALISED boolean keyword and use these keywords in lowercase mode, search engine doesn't execute the BOOLEAN SEARCH and only executes the RANKED RETRIEVAL**
+
+<br>
+# Example of ranked retrieval:
+<br><img width="710" alt="Hamlet_Sample_1" src="https://user-images.githubusercontent.com/93945976/184540587-50847443-5d6c-44f1-8e9f-0492a7634c67.PNG">
+
+<br>
+# Example of boolean search:
+<br><img width="691" alt="Hamlet_Sample_2" src="https://user-images.githubusercontent.com/93945976/184540540-5a6f5e53-dac1-4b85-ac09-914f3e664c3f.PNG">
+
 # Set Up
 First by using command line navigate into the server folder, then create a virtual environment 
 ```
