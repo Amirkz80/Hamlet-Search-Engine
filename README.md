@@ -1,5 +1,12 @@
 ![hamlet_rectangle](https://user-images.githubusercontent.com/93945976/183778134-18b60488-dd77-4710-bebd-9911bb8ab46b.png)
 
+# Table Of Contents
+- [What is **Hamlet** ?](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#hamlet)
+- [How To Seacrh?](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#how-to-search-)
+- [Ranked Retrieval Example](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#example-of-ranked-retrieval-with-a-test-repository-that-contains-1011-random-documents)
+- [Boolean Seacrh Example](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#example-of-boolean-search-with-a-test-repository-that-contains-1011-random-documents)
+- [Set Up](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#set-up)
+- [Run Hamlet](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#run-hamlet)
 
 # HAMLET
 Hamlet is a search engine 🔎
@@ -69,13 +76,13 @@ python index.py
 It may take a while to index all documents, specially if you have a really large repository, but remember it is a fair cost to pay for having fast and related results in the next part, which is performing search action.
 
 ## Third Step: Setting Up The Front-End And The Back-End Server
-First, by using command line navigate into the server folder then while the virtual environment is activated run the following commands, It will run a local development server:
+First, by using command line navigate into the server folder then while the virtual environment is activated run the following commands, It will run a local development server
 ```
 set FLASK_APP=search_engine.py
 set FLASK_ENV=development
 flask run
 ```
-Now by opening a new command line or terminal window, navigate into the client folder and run the following commands, this will activate our client side:
+Now by opening a new command line or terminal window, navigate into the client folder and run the following commands, this will activate our client side
 ```
 npm i
 npm run dev
