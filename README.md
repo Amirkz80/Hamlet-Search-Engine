@@ -2,7 +2,7 @@
 
 # Table Of Contents
 - [What is **Hamlet** ?](https://github.com/Amirkz80/Hamlet-Search-Engine#hamlet)
-- [How To Seacrh?](https://github.com/Amirkz80/Hamlet-Search-Engine#how-to-search-)
+- [How To Search?](https://github.com/Amirkz80/Hamlet-Search-Engine#how-to-search-)
 - [Ranked Retrieval Example](https://github.com/Amirkz80/Hamlet-Search-Engine#example-of-ranked-retrieval-with-a-test-repository-that-contains-1011-random-documents)
 - [Boolean Search Example](https://github.com/Amirkz80/Hamlet-Search-Engine#example-of-boolean-search-with-a-test-repository-that-contains-1011-random-documents)
 - [Set Up](https://github.com/Amirkz80/Hamlet-Search-Engine#set-up)
