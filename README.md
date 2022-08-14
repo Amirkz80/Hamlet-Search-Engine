@@ -75,7 +75,7 @@ set FLASK_APP=search_engine.py
 set FLASK_ENV=development
 flask run
 ```
-Second, by using command line navigate into the client folder and run the following commands, It will activate our client side:
+Now by opening a new command line or terminal window, navigate into the client folder and run the following commands, this will activate our client side:
 ```
 npm i
 npm run dev
