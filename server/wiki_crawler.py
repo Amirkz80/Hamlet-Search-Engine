@@ -59,7 +59,7 @@ def crawler(url: str):
     for link in parser(r).find_all('a'):
         
         # Crawler cralws 10 pages in each call
-        if called_num > 10:
+        if called_num > 100:
             return 0
         elif link.get("href") is not None and "/wiki/" == link.get("href")[:6] and check_url("https://en.wikipedia.org" + link.get("href")) and ":" not in link.get("href"):
             crawler("https://en.wikipedia.org" + link.get("href"))
@@ -68,7 +68,7 @@ def main():
     """Main function"""
     global n
 
-    if path.exists("'index_table/urls.txt'"):
+    if path.exists("index_table/urls.txt"):
         with open('index_table/urls.txt', 'r', encoding='utf-8') as file:
             lines = file.readlines()
             n = int(lines[-1])
