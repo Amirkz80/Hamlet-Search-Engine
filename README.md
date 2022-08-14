@@ -1,12 +1,12 @@
 ![hamlet_rectangle](https://user-images.githubusercontent.com/93945976/183778134-18b60488-dd77-4710-bebd-9911bb8ab46b.png)
 
 # Table Of Contents
-- [What is **Hamlet** ?](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#hamlet)
-- [How To Seacrh?](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#how-to-search-)
-- [Ranked Retrieval Example](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#example-of-ranked-retrieval-with-a-test-repository-that-contains-1011-random-documents)
-- [Boolean Seacrh Example](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#example-of-boolean-search-with-a-test-repository-that-contains-1011-random-documents)
-- [Set Up](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#set-up)
-- [Run Hamlet](https://github.com/Amirkz80/Hamlet-Search-Engine/edit/master/README.md#run-hamlet)
+- [What is **Hamlet** ?](https://github.com/Amirkz80/Hamlet-Search-Engine#hamlet)
+- [How To Seacrh?](https://github.com/Amirkz80/Hamlet-Search-Engine#how-to-search-)
+- [Ranked Retrieval Example](https://github.com/Amirkz80/Hamlet-Search-Engine#example-of-ranked-retrieval-with-a-test-repository-that-contains-1011-random-documents)
+- [Boolean Seacrh Example](https://github.com/Amirkz80/Hamlet-Search-Engine#example-of-boolean-search-with-a-test-repository-that-contains-1011-random-documents)
+- [Set Up](https://github.com/Amirkz80/Hamlet-Search-Engine#set-up)
+- [Run **Hamlet**](https://github.com/Amirkz80/Hamlet-Search-Engine#run-hamlet)
 
 # HAMLET
 Hamlet is a search engine 🔎
