@@ -17,9 +17,9 @@ and in the final step it returns relevant results, based on the query that you g
 Hamlet can detect whether to execute "**Boolean Search**" or "**Ranked Retrieval**".
 <br><br>To perform a boolean search, all you need to do is to put an **UPPERCASE** boolean keyword inside your query. Hamlet realizes that there is an UPPERCASE boolean keyword and executes the boolean search.
 <br>Supported boolean keywords are ---> "**AND**", "**OR**", "**NOT**", "**(**", "**)**"
-<br>You can enter simple <e.g., "word1 AND word2"> or complex <e.g., "(word1 AND word2) OR ((NOT word3) AND word4 OR word5) OR (NOT word6))"> boolean queries, there is no limitation to use them,
 
-<br><br>The only limitation is your imagination 🔮.
+<br>You can enter simple <e.g., "word1 AND word2"> or complex <e.g., "(word1 AND word2) OR ((NOT word3) AND word4 OR word5) OR (NOT word6))"> boolean queries, there is no limitation to use them,
+<br>The only limitation is your imagination 🔮.
 
 ## ⭕💡NOTICE
 <br>Remember, if you forget to use an UPPERCASE boolean keyword and use these keywords in lowercase mode, search engine doesn't execute the BOOLEAN SEARCH and only executes the RANKED RETRIEVAL.
@@ -82,4 +82,5 @@ npm run dev
 ```
 
 ## Fourth Step: Enjoy searching 🎉🔎🌍
-Now by using the search box you can search by two dfferent approaches, **Boolean Search** or **Ranked Retrieval**
+By using your browser go to <http://localhost:3000/>. 3000 is the next js default port which you can change if you want to.
+you will observe a search box and that's it, have a nice search with hamlet 👨🏻‍💻👩🏻‍💻
