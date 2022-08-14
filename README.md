@@ -11,21 +11,23 @@ Hamlet is a search engine 🔎
 
 <br>It is able to crawl **English Wikipedia** and store the articles in text format, then it analyses all articles in the repository,
 and in the final step it returns relevant results, based on the query that you give to hamlet.
+<br>you can click on these results and you will be redirected to that result's page in WIKIPEDIA.
 
+## How to search ?
 Hamlet can detect whether to execute "**Boolean Search**" or "**Ranked Retrieval**".
-<br><br>To perform a boolean search, all you need to do is to put a **CAPITALISED** boolean keyword inside your query. Hamlet realizes that there is a CAPITALISED boolean keyword and executes the boolean search.
+<br><br>To perform a boolean search, all you need to do is to put an **UPPERCASE** boolean keyword inside your query. Hamlet realizes that there is an UPPERCASE boolean keyword and executes the boolean search.
 <br>Supported boolean keywords are ---> "**AND**", "**OR**", "**NOT**", "**(**", "**)**"
-<br>You can enter simple <e.g., "word1 AND word2"> or complex <e.g., "(word1 AND word2) OR ((NOT word3) AND word4 OR word5) OR (NOT word6))"> boolean queries, there is no limitation to use them, 
-<br>The only limitation is your imagination 🔮.
+<br>You can enter simple <e.g., "word1 AND word2"> or complex <e.g., "(word1 AND word2) OR ((NOT word3) AND word4 OR word5) OR (NOT word6))"> boolean queries, there is no limitation to use them,
 
-<br>**⭕💡 Remember, if you forget to use a CAPITALISED boolean keyword and use these keywords in lowercase mode, search engine doesn't execute the BOOLEAN SEARCH and only executes the RANKED RETRIEVAL**
+<br><br>The only limitation is your imagination 🔮.
 
-<br>
-# Example of ranked retrieval:
+## ⭕💡NOTICE
+<br>Remember, if you forget to use an UPPERCASE boolean keyword and use these keywords in lowercase mode, search engine doesn't execute the BOOLEAN SEARCH and only executes the RANKED RETRIEVAL.
+
+## Example of ranked retrieval (with a test repository that contains 1011 random documents):
 <br><img width="710" alt="Hamlet_Sample_1" src="https://user-images.githubusercontent.com/93945976/184540587-50847443-5d6c-44f1-8e9f-0492a7634c67.PNG">
 
-<br>
-# Example of boolean search:
+## Example of boolean search (with a test repository that contains 1011 random documents):
 <br><img width="691" alt="Hamlet_Sample_2" src="https://user-images.githubusercontent.com/93945976/184540540-5a6f5e53-dac1-4b85-ac09-914f3e664c3f.PNG">
 
 # Set Up
